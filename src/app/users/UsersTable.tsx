@@ -19,10 +19,10 @@ export default function UsersTable({ users }: UsersTableProps) {
 			<Table>
 				<TableHeader>
 					<TableRow className="border-b bg-accent hover:bg-accent">
-						<TableHead className="text-left p-2">ID</TableHead>
-						<TableHead className="text-left p-2">Имя</TableHead>
-						<TableHead className="text-left p-2">Email</TableHead>
-						<TableHead className="text-center p-2">
+						<TableHead className="text-center p-2 w-1/12">ID</TableHead>
+						<TableHead className="text-left p-2 w-1/3">Имя</TableHead>
+						<TableHead className="text-left p-2 w-1/3">Email</TableHead>
+						<TableHead className="text-center p-2 w-2/12">
 							Избранное
 						</TableHead>
 					</TableRow>
@@ -30,7 +30,7 @@ export default function UsersTable({ users }: UsersTableProps) {
 				<TableBody className="[&>tr]:hover:bg-transparent">
 					{users.map((user) => (
 						<TableRow key={user.id} className="border-b">
-							<TableCell className="p-2">{user.id}</TableCell>
+							<TableCell className="p-2 text-center">{user.id}</TableCell>
 							<TableCell className="p-2">{user.name}</TableCell>
 							<TableCell className="p-2">{user.email}</TableCell>
 
