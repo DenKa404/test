@@ -1,17 +1,17 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/src/components/ui/button"
+import { Star } from "lucide-react"
 
 export default function FavoriteButton() {
   const [favorite, setFavorite] = useState(false)
 
   return (
-    <Button
-      variant={favorite ? "default" : "outline"}
+    <div
+	className="size-fit items-center cursor-pointer"
       onClick={() => setFavorite(!favorite)}
     >
-      {favorite ? "★ Favorite" : "☆ Add"}
-    </Button>
+      {favorite ? <Star className="fill-chart-1"/> : <Star/>}
+    </div>
   )
 }
