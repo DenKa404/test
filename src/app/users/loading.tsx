@@ -4,6 +4,7 @@ export default function Loading() {
 	const sceletonRowsCount = 4;
 	return (
 		<div className="flex flex-col items-center max-w-2xl mx-auto p-6 space-y-6">
+			<Header />
 
 			<div className="w-full space-y-2">
 				{Array.from({ length: sceletonRowsCount }).map((_, idx) => (
