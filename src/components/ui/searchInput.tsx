@@ -6,13 +6,16 @@ import { Input } from './input';
 
 interface SearchInputProps {
 	rootURL: string;
-	queryParamName: string
+	queryParamName: string;
 }
 
-export default function SearchInput({ rootURL, queryParamName }: SearchInputProps) {
+export default function SearchInput({
+	rootURL,
+	queryParamName,
+}: SearchInputProps) {
 	const router = useRouter();
 	const searchParams = useSearchParams();
-	const [, startTransition] = useTransition();
+	const [isPending, startTransition] = useTransition();
 
 	const handleChange = (value: string) => {
 		const params = new URLSearchParams(searchParams.toString());
@@ -26,10 +29,18 @@ export default function SearchInput({ rootURL, queryParamName }: SearchInputProp
 	};
 
 	return (
-		<Input
-			placeholder="Начните ввод имени..."
-			defaultValue={searchParams.get(queryParamName) ?? ''}
-			onChange={(e) => handleChange(e.target.value)}
-		/>
+			<div className="w-full">
+				<Input
+					placeholder="Фильтр по имени..."
+					defaultValue={searchParams.get(queryParamName) ?? ''}
+					onChange={(e) => handleChange(e.target.value)}
+				/>
+
+				{isPending && (
+					<div className="mt-2 text-sm text-muted-foreground">
+						Loading...
+					</div>
+				)}
+			</div>
 	);
 }
