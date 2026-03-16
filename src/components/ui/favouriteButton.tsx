@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Star } from 'lucide-react';
+import { cn } from '@/src/lib/utils';
 
 export default function FavoriteButton({
 	isFavorite,
@@ -15,7 +16,7 @@ export default function FavoriteButton({
 			className={'size-fit items-center cursor-pointer'}
 			onClick={() => setFavorite(!favorite)}
 		>
-			{favorite ? <Star className="fill-chart-1" /> : <Star />}
+			<Star className={favorite ? "fill-chart-1" : ""} />
 		</div>
 	);
 }
