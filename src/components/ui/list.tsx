@@ -45,18 +45,16 @@ function List<T extends { id: string | number }>({
 				<TableBody>
 					{items.map((item) => (
 						<TableRow key={item.id}>
-							{fields.map((field) =>
-								field.customRender ? (
-									field.customRender(item)
-								) : (
-									<TableCell
-										key={String(field.key)}
-										className={field.className}
-									>
-										{String(item[field.key])}
-									</TableCell>
-								),
-							)}
+							{fields.map((field) => (
+								<TableCell
+									key={String(field.key)}
+									className={field.className}
+								>
+									{field.customRender
+										? field.customRender(item)
+										: String(item[field.key])}
+								</TableCell>
+							))}
 						</TableRow>
 					))}
 				</TableBody>
