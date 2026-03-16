@@ -8,25 +8,25 @@ export interface UserData {
 const users: UserData[] = [
 	{
 		id: 1,
-		name: 'Petya Slavin',
+		name: 'Петр Славин',
 		email: 'petya@mail.ru',
 		isFavorite: true,
 	},
 	{
 		id: 2,
-		name: 'Sasha Petrovich',
+		name: 'Александр Петров',
 		email: 'sasha@ya.ru',
 		isFavorite: false,
 	},
 	{
 		id: 3,
-		name: 'Kolya Semenov',
+		name: 'Николай Семенов',
 		email: 'Kolya@gmail.com',
 		isFavorite: false,
 	},
 	{
 		id: 4,
-		name: 'Semen Andreev',
+		name: 'Семен Андреев',
 		email: 'semen@somedomen.net',
 		isFavorite: false,
 	},
