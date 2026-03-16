@@ -1,4 +1,4 @@
-import { UserData, users } from './usersDB';
+import { users } from './usersDB';
 
 export async function getUsers(search?: string) {
 	await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -8,10 +8,4 @@ export async function getUsers(search?: string) {
 	return users.filter((user) =>
 		user.name.toLowerCase().includes(search.toLowerCase()),
 	);
-}
-
-export async function setFavoriteUser(user: UserData) {
-	await new Promise((resolve) => setTimeout(resolve, 500));
-
-	user.isFavorite
 }
