@@ -2,13 +2,23 @@
 
 import { useState } from 'react';
 import { Star } from 'lucide-react';
-import { cn } from '@/src/lib/utils';
 
+/**
+ * Пропсы компонента кнопки "В избранное".
+ */
+interface FavoriteButtonProps {
+	/** Начальное состояние "избранного" */
+	isFavorite: boolean;
+}
+
+/**
+ * Кнопка "В избранное".
+ *
+ * Хранит состояние локально и не инициирует ререндер родительских компонентов.
+ */
 export default function FavoriteButton({
 	isFavorite,
-}: {
-	isFavorite: boolean;
-}) {
+}: FavoriteButtonProps) {
 	const [favorite, setFavorite] = useState(isFavorite);
 
 	return (

@@ -1,5 +1,8 @@
 import Header from '@/src/app/users/header';
 
+/**
+ * Скелетон с шапкой при загрузке данных.
+ */
 export default function Loading() {
 	const sceletonRowsCount = 4;
 	return (

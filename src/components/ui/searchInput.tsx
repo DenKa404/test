@@ -4,11 +4,22 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useTransition } from 'react';
 import { Input } from './input';
 
+/**
+ * Пропсы компонента поиска с синхронизацией через query-параметры URL.
+ */
 interface SearchInputProps {
+	/** Путь (route), на который выполняется переход */
 	rootURL: string;
+
+	/** Имя query-параметра, используемого для фильтрации */
 	queryParamName: string;
 }
 
+/**
+ * Компонент поиска с синхронизацией значения через query-параметры URL.
+ *
+ * Обновляет URL при вводе и инициирует серверный ререндер страницы.
+ */
 export default function SearchInput({
 	rootURL,
 	queryParamName,

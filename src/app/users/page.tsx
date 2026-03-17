@@ -1,17 +1,28 @@
 import SearchInput from '@/src/components/ui/searchInput';
 import { getUsers } from '@/src/lib/API/users';
 import UsersTable from './UsersTable';
-import Link from 'next/link';
 import Header from '@/src/app/users/header';
 
+/**
+ * Пропсы страницы пользователей.
+ */
 interface UsersPageProps {
+	/** Query-параметры URL */
 	searchParams: {
+		/** Подстрока для фильтрации пользователей */
 		searchSubString?: string;
 	};
 }
 
+/**
+ * Страница списка пользователей.
+ *
+ * Загружает пользователей на сервере и фильтрует их
+ * по query-параметру searchSubString.
+ */
 async function UsersPage({ searchParams }: UsersPageProps) {
 	const { searchSubString } = await searchParams;
+	//получение пользователей из БД (эмуляция)
 	const usersFromServ = await getUsers(searchSubString);
 
 	return (
